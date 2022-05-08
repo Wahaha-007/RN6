@@ -7,14 +7,15 @@ function CategoriesScreen({ navigation }) {
   function renderCategoryItem(itemData) {
 
     function pressHandler() {
-      navigation.navigate("MealsOverview");  // No argument allow yet
+      navigation.navigate("MealsOverview", {
+        categoryId: itemData.item.id,
+      });  // No argument allow yet
     }
   
     return (
       <CategoryGridTile title={itemData.item.title} color={itemData.item.color} onPress={pressHandler}/>
     );
   }
-
 
   return (
     <FlatList 
